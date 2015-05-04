@@ -11,6 +11,11 @@ try:
 except ImportError:
     from django.conf.urls.defaults import patterns, url, include
 
+# for Django => 1.8 support
+try:
+    from importlib import import_module
+except ImportError:
+    from django.utils.importlib import import_module
 
 SOCKETIO_NS = {}
 
